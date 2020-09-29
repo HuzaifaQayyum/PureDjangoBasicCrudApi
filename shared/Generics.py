@@ -4,7 +4,6 @@ from django.http import Http404
 from django.views import View
 
 class BaseView:
-
     def get_model(self, *args, **kwargs):
         raise NotImplementedError
 
@@ -33,7 +32,6 @@ class CreateView(BaseView):
         return JsonResponse(category, status=200)
 
 class RetrieveView(BaseDetailView):
-    
     def __get_object(self, pk):
         try:
             model_object = self.get_model().objects.get(**{self.get_pk(): pk})

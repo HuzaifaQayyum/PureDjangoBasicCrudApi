@@ -6,6 +6,7 @@ from shared.Generics import ListView, CreateView, RetrieveView
 from .models import Category
 from .forms import CategoryForm
 
+
 class CategoryBase:
     def get_model(self):
         return Category
@@ -13,8 +14,8 @@ class CategoryBase:
     def get_form(self, *args, **kwargs):
         return CategoryForm(*args, **kwargs)
 
-class CategoryListView(View, CategoryBase, ListView, CreateView):
 
+class CategoryListView(View, CategoryBase, ListView, CreateView):
     def get_model(self):
         return Category
 
